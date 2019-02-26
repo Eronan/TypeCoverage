@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Type Coverage</string>
+    <string name="MainView_IconDescription">Pokemon Icon</string>
+    <string name="MainView_DefaultTextView">Pokemon</string>
+    <string name="MainView_TextHint">Search for a Pokemon</string>
+    <string name="MainView_DefaultMoveView">Move</string>
+</resources>

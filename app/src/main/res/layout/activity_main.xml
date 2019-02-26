@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" app:srcCompat="@android:drawable/arrow_down_float"
+                        android:id="@+id/button_ExpandMoves1" android:layout_weight="1" android:cropToPadding="true"
+                        android:minWidth="0dp" android:padding="0dp"/>
+                <ImageView
+                        android:layout_height="wrap_content" app:srcCompat="@android:color/transparent"
+                        android:id="@+id/imageView_party1" android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:contentDescription="@string/MainView_IconDescription"/>
+                <AutoCompleteTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView_party1"
+                        android:labelFor="@+id/editText_party1"
+                        android:layout_weight="1"
+                        android:text="@string/MainView_DefaultTextView" android:completionHint="@string/app_name"
+                        android:hint="@string/MainView_TextHint"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/linearLayout_Moveset1"
+                    android:visibility="gone">
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move1_1"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move1_2"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move1_3"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move1_4"
+                        android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" app:srcCompat="@android:drawable/arrow_down_float"
+                        android:id="@+id/button_ExpandMoves2" android:layout_weight="1" android:cropToPadding="true"
+                        android:minWidth="0dp" android:padding="0dp"/>
+                <ImageView
+                        android:layout_height="wrap_content" app:srcCompat="@android:color/transparent"
+                        android:id="@+id/imageView_party2" android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:contentDescription="@string/MainView_IconDescription"/>
+                <AutoCompleteTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView_party2"
+                        android:labelFor="@+id/editText_party1"
+                        android:layout_weight="1"
+                        android:text="@string/MainView_DefaultTextView" android:completionHint="@string/app_name"
+                        android:hint="@string/MainView_TextHint"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/linearLayout_Moveset2"
+                    android:visibility="gone">
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move2_1"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move2_2"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move2_3"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move2_4"
+                        android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" app:srcCompat="@android:drawable/arrow_down_float"
+                        android:id="@+id/button_ExpandMoves3" android:layout_weight="1" android:cropToPadding="true"
+                        android:minWidth="0dp" android:padding="0dp"/>
+                <ImageView
+                        android:layout_height="wrap_content" app:srcCompat="@android:color/transparent"
+                        android:id="@+id/imageView_party3" android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:contentDescription="@string/MainView_IconDescription"/>
+                <AutoCompleteTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView_party3"
+                        android:labelFor="@+id/editText_party3"
+                        android:layout_weight="1"
+                        android:text="@string/MainView_DefaultTextView" android:completionHint="@string/app_name"
+                        android:hint="@string/MainView_TextHint"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/linearLayout_Moveset3"
+                    android:visibility="gone">
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move3_1"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move3_2"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move3_3"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move3_4"
+                        android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" app:srcCompat="@android:drawable/arrow_down_float"
+                        android:id="@+id/button_ExpandMoves4" android:layout_weight="1" android:cropToPadding="true"
+                        android:minWidth="0dp" android:padding="0dp"/>
+                <ImageView
+                        android:layout_height="wrap_content" app:srcCompat="@android:color/transparent"
+                        android:id="@+id/imageView_party4" android:layout_weight="1" android:layout_width="wrap_content"
+                        android:contentDescription="@string/MainView_IconDescription"/>
+                <AutoCompleteTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView_party4"
+                        android:labelFor="@+id/editText_party1"
+                        android:layout_weight="1"
+                        android:text="@string/MainView_DefaultTextView" android:completionHint="@string/app_name"
+                        android:hint="@string/MainView_TextHint"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/linearLayout_Moveset4"
+                    android:visibility="gone">
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move4_1"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move4_2"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move4_3"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move4_4"
+                        android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" app:srcCompat="@android:drawable/arrow_down_float"
+                        android:id="@+id/button_ExpandMoves5" android:layout_weight="1" android:cropToPadding="true"
+                        android:minWidth="0dp" android:padding="0dp"/>
+                <ImageView
+                        android:layout_height="wrap_content" app:srcCompat="@android:color/transparent"
+                        android:id="@+id/imageView_party5" android:layout_weight="1" android:layout_width="wrap_content"
+                        android:contentDescription="@string/MainView_IconDescription"/>
+                <AutoCompleteTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView_party5"
+                        android:labelFor="@+id/editText_party1"
+                        android:layout_weight="1"
+                        android:text="@string/MainView_DefaultTextView" android:completionHint="@string/app_name"
+                        android:hint="@string/MainView_TextHint"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/linearLayout_Moveset5"
+                    android:visibility="gone">
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move5_1"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move5_2"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move5_3"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move5_4"
+                        android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" app:srcCompat="@android:drawable/arrow_down_float"
+                        android:id="@+id/button_ExpandMoves6" android:layout_weight="1" android:cropToPadding="true"
+                        android:minWidth="0dp" android:padding="0dp"/>
+                <ImageView
+                        android:layout_height="wrap_content" app:srcCompat="@android:color/transparent"
+                        android:id="@+id/imageView_party6" android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:contentDescription="@string/MainView_IconDescription"/>
+                <AutoCompleteTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView_party6"
+                        android:labelFor="@+id/editText_party1"
+                        android:layout_weight="1"
+                        android:text="@string/MainView_DefaultTextView" android:completionHint="@string/app_name"
+                        android:hint="@string/MainView_TextHint"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/linearLayout_Moveset6"
+                    android:visibility="gone">
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move6_1"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move6_2"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move6_3"
+                        android:layout_weight="1"/>
+                <AutoCompleteTextView
+                        android:text="@string/MainView_DefaultMoveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView_Move6_4"
+                        android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
