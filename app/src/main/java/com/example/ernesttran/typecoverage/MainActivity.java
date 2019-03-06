@@ -17,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //File Director
+        //File Directory
         filesDir = getFilesDir().getPath();
-        Log.d("Output",filesDir + "/PkmnData.db");
-        /*
+
+        //Download Database
+
+
         //Load Database
         allData = SQLiteDatabase.openDatabase(filesDir + "/PKMNData.db",null,SQLiteDatabase.OPEN_READONLY, null);
 
@@ -33,6 +35,5 @@ public class MainActivity extends AppCompatActivity {
             speciesList.moveToNext();
         }
         if (!speciesList.isClosed()) speciesList.close();
-        */
     }
 }
