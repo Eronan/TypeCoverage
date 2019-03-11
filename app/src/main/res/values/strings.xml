@@ -3,7 +3,7 @@
     <string name="MainView_IconDescription">Pokemon Icon</string>
     <string name="MainView_DefaultTextView">Pokemon</string>
     <string name="MainView_TextHint">Search for a Pokemon</string>
-    <string name="MainView_DefaultMoveView">Move</string>
     <string name="Button_ExpandDescription">Expand Moveset</string>
-    <string name="TextView_Moves">Pokemon Move</string>
+    <string name="TextView_Moves">Search for a Move</string>
+    <string name="MainView_AbiiltyHint">Choose an Ability</string>
 </resources>
