@@ -33,8 +33,9 @@
                     android:ems="10"
                     android:id="@+id/editText_Generation"
                     android:selectAllOnFocus="false" android:hint="Generation of Pokemon"
+                    android:focusable="false" android:focusableInTouchMode="false"
                     tools:ignore="HardcodedText" android:text="7"
-                    app:layout_constraintEnd_toStartOf="@+id/DownButton"
+                    app:layout_constraintEnd_toStartOf="@+id/button_DownGeneration"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     tools:layout_conversion_absoluteHeight="45dp"
@@ -42,7 +43,7 @@
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" app:srcCompat="@android:drawable/arrow_up_float"
-                    android:id="@+id/UpButton"
+                    android:id="@+id/button_UpGeneration"
                     android:paddingHorizontal="16dp" android:paddingVertical="4dp"
                     android:background="?attr/colorButtonNormal"
                     android:contentDescription="Up Button"
@@ -54,12 +55,12 @@
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" app:srcCompat="@android:drawable/arrow_down_float"
-                    android:id="@+id/DownButton" android:paddingHorizontal="16dp"
+                    android:id="@+id/button_DownGeneration" android:paddingHorizontal="16dp"
                     android:paddingVertical="4dp" android:background="?attr/colorButtonNormal"
                     android:contentDescription="Down Button"
                     tools:ignore="HardcodedText"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/UpButton"
+                    app:layout_constraintTop_toBottomOf="@+id/button_UpGeneration"
                     app:layout_constraintBottom_toBottomOf="parent"
                     tools:layout_conversion_absoluteHeight="19dp"
                     tools:layout_conversion_absoluteWidth="40dp"/>
@@ -68,6 +69,11 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+            <CheckBox
+                    android:text="Images"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/checkBox_Images" android:layout_weight="1"
+                    android:checked="true"/>
             <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/checkBox_Abilities"
@@ -100,10 +106,9 @@
                 <AutoCompleteTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/textView_party1"
-                        android:labelFor="@+id/editText_party1"
                         android:layout_weight="3"
                         android:completionHint="@string/app_name"
-                        android:hint="@string/MainView_TextHint"/>
+                        android:hint="@string/MainView_TextHint" android:completionThreshold="3"/>
             </LinearLayout>
             <LinearLayout
                     android:orientation="vertical"
@@ -115,25 +120,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move1_1"
                         android:layout_weight="1"
-                        android:hint="@string/TextView_Moves"/>
+                        android:hint="@string/TextView_Moves" android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move1_2"
                         android:layout_weight="1"
-                        android:hint="@string/TextView_Moves"/>
+                        android:hint="@string/TextView_Moves" android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move1_3"
                         android:layout_weight="1"
-                        android:hint="@string/TextView_Moves"/>
+                        android:hint="@string/TextView_Moves" android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move1_4"
                         android:layout_weight="1"
-                        android:hint="@string/TextView_Moves"/>
+                        android:hint="@string/TextView_Moves" android:completionThreshold="3"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -159,10 +164,9 @@
                 <AutoCompleteTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/textView_party2"
-                        android:labelFor="@+id/editText_party1"
                         android:layout_weight="3"
                         android:completionHint="@string/app_name"
-                        android:hint="@string/MainView_TextHint"/>
+                        android:hint="@string/MainView_TextHint" android:completionThreshold="3"/>
             </LinearLayout>
             <LinearLayout
                     android:orientation="vertical"
@@ -173,22 +177,26 @@
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move2_1"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move2_2"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move2_3"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move2_4"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -214,10 +222,9 @@
                 <AutoCompleteTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/textView_party3"
-                        android:labelFor="@+id/editText_party3"
                         android:layout_weight="3"
                         android:completionHint="@string/app_name"
-                        android:hint="@string/MainView_TextHint"/>
+                        android:hint="@string/MainView_TextHint" android:completionThreshold="3"/>
             </LinearLayout>
             <LinearLayout
                     android:orientation="vertical"
@@ -228,22 +235,26 @@
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move3_1"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move3_2"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move3_3"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move3_4"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -268,10 +279,9 @@
                 <AutoCompleteTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/textView_party4"
-                        android:labelFor="@+id/editText_party1"
                         android:layout_weight="3"
                         android:completionHint="@string/app_name"
-                        android:hint="@string/MainView_TextHint"/>
+                        android:hint="@string/MainView_TextHint" android:completionThreshold="3"/>
             </LinearLayout>
             <LinearLayout
                     android:orientation="vertical"
@@ -282,22 +292,26 @@
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move4_1"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move4_2"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move4_3"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move4_4"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -322,10 +336,9 @@
                 <AutoCompleteTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/textView_party5"
-                        android:labelFor="@+id/editText_party1"
                         android:layout_weight="3"
                         android:completionHint="@string/app_name"
-                        android:hint="@string/MainView_TextHint"/>
+                        android:hint="@string/MainView_TextHint" android:completionThreshold="3"/>
             </LinearLayout>
             <LinearLayout
                     android:orientation="vertical"
@@ -336,22 +349,26 @@
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move5_1"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move5_2"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move5_3"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move5_4"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -376,10 +393,9 @@
                 <AutoCompleteTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/textView_party6"
-                        android:labelFor="@+id/editText_party1"
                         android:layout_weight="3"
                         android:completionHint="@string/app_name"
-                        android:hint="@string/MainView_TextHint"/>
+                        android:hint="@string/MainView_TextHint" android:completionThreshold="3"/>
             </LinearLayout>
             <LinearLayout
                     android:orientation="vertical"
@@ -390,22 +406,26 @@
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move6_1"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move6_2"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move6_3"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
                 <AutoCompleteTextView
                         android:text="@string/MainView_DefaultMoveView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView_Move6_4"
-                        android:layout_weight="1" android:hint="@string/TextView_Moves"/>
+                        android:layout_weight="1" android:hint="@string/TextView_Moves"
+                        android:completionThreshold="3"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
