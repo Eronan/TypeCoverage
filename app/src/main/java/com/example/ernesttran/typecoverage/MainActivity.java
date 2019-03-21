@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView pokemon1_Image;
     AutoCompleteTextView pokemon1_EditText;
     LinearLayout pokemon1_MoveLayout;
+    AutoCompleteTextView pokemon1_Ability;
     AutoCompleteTextView pokemon1_Move1;
     AutoCompleteTextView pokemon1_Move2;
     AutoCompleteTextView pokemon1_Move3;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView pokemon2_Image;
     AutoCompleteTextView pokemon2_EditText;
     LinearLayout pokemon2_MoveLayout;
+    AutoCompleteTextView pokemon2_Ability;
     AutoCompleteTextView pokemon2_Move1;
     AutoCompleteTextView pokemon2_Move2;
     AutoCompleteTextView pokemon2_Move3;
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView pokemon3_Image;
     AutoCompleteTextView pokemon3_EditText;
     LinearLayout pokemon3_MoveLayout;
+    AutoCompleteTextView pokemon3_Ability;
     AutoCompleteTextView pokemon3_Move1;
     AutoCompleteTextView pokemon3_Move2;
     AutoCompleteTextView pokemon3_Move3;
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView pokemon4_Image;
     AutoCompleteTextView pokemon4_EditText;
     LinearLayout pokemon4_MoveLayout;
+    AutoCompleteTextView pokemon4_Ability;
     AutoCompleteTextView pokemon4_Move1;
     AutoCompleteTextView pokemon4_Move2;
     AutoCompleteTextView pokemon4_Move3;
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView pokemon5_Image;
     AutoCompleteTextView pokemon5_EditText;
     LinearLayout pokemon5_MoveLayout;
+    AutoCompleteTextView pokemon5_Ability;
     AutoCompleteTextView pokemon5_Move1;
     AutoCompleteTextView pokemon5_Move2;
     AutoCompleteTextView pokemon5_Move3;
@@ -75,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView pokemon6_Image;
     AutoCompleteTextView pokemon6_EditText;
     LinearLayout pokemon6_MoveLayout;
+    AutoCompleteTextView pokemon6_Ability;
     AutoCompleteTextView pokemon6_Move1;
     AutoCompleteTextView pokemon6_Move2;
     AutoCompleteTextView pokemon6_Move3;
@@ -86,9 +92,13 @@ public class MainActivity extends AppCompatActivity {
     PKMNDatabaseHelper mDBHelper;
     HashMap<String, Integer> PokemonList = new HashMap<String, Integer>();
     HashMap<String, Integer> MoveList = new HashMap<String, Integer>();
+    HashMap<String, Integer> AbilityList = new HashMap<String, Integer>();
     String[] SpeciesNames;
     String[] MoveNames;
+    String[] AbilityNames;
+    ArrayAdapter<String> PokemonAdapter;
     ArrayAdapter<String> DefaultMoveAdapter;
+    ArrayAdapter<String> DefaultAbilityAdapter;
     //</editor-fold>
 
     @Override
@@ -132,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Build Array Adapter
-        ArrayAdapter<String> speciesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, SpeciesNames);
+        PokemonAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, SpeciesNames);
         //</editor-fold>
 
         //<editor-fold desc="Get Names for Moves">
@@ -151,6 +161,24 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         DefaultMoveAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, MoveNames);
+        //</editor-fold>
+
+        //<editor-fold desc="Get Names for Abilities">
+        Cursor abilityResults = allData.rawQuery("SELECT ID, Name FROM Abilities", null);
+        length = abilityResults.getCount();
+        AbilityNames = new String[length];
+
+        //Move to First Row
+        if (abilityResults.moveToFirst()) {
+            //Load Data into HashMap
+            for (int i = 0; i < length; i++) {
+                Integer currID = abilityResults.getInt(0);
+                String currName = abilityResults.getString(1);
+                AbilityList.put(currName, currID);
+                AbilityNames[i] = currName;
+            }
+        }
+        DefaultAbilityAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, AbilityNames);
         //</editor-fold>
 
         //<editor-fold desc="Initialize Generation Widgets">
@@ -190,9 +218,11 @@ public class MainActivity extends AppCompatActivity {
         pokemon1_Image = findViewById(R.id.imageView_party1);
         ///Species Name
         pokemon1_EditText = findViewById(R.id.textView_party1);
-        pokemon1_EditText.setAdapter(speciesAdapter);
+        pokemon1_EditText.setAdapter(PokemonAdapter);
         ///Move Group
         pokemon1_MoveLayout = findViewById(R.id.linearLayout_Moveset1);
+        //Ability
+        pokemon1_Ability = findViewById(R.id.textView_Ability1);
         ///Move 1
         pokemon1_Move1 = findViewById(R.id.textView_Move1_1);
         ///Move 2
@@ -220,9 +250,11 @@ public class MainActivity extends AppCompatActivity {
         pokemon2_Image = findViewById(R.id.imageView_party2);
         ///Species Name
         pokemon2_EditText = findViewById(R.id.textView_party2);
-        pokemon2_EditText.setAdapter(speciesAdapter);
+        pokemon2_EditText.setAdapter(PokemonAdapter);
         ///Move Group
         pokemon2_MoveLayout = findViewById(R.id.linearLayout_Moveset2);
+        //Ability
+        pokemon2_Ability = findViewById(R.id.textView_Ability2);
         ///Move 1
         pokemon2_Move1 = findViewById(R.id.textView_Move2_1);
         ///Move 2
@@ -250,9 +282,11 @@ public class MainActivity extends AppCompatActivity {
         pokemon3_Image = findViewById(R.id.imageView_party3);
         ///Species Name
         pokemon3_EditText = findViewById(R.id.textView_party3);
-        pokemon3_EditText.setAdapter(speciesAdapter);
+        pokemon3_EditText.setAdapter(PokemonAdapter);
         ///Move Group
         pokemon3_MoveLayout = findViewById(R.id.linearLayout_Moveset3);
+        //Ability
+        pokemon3_Ability = findViewById(R.id.textView_Ability3);
         ///Move 1
         pokemon3_Move1 = findViewById(R.id.textView_Move3_1);
         ///Move 2
@@ -280,9 +314,11 @@ public class MainActivity extends AppCompatActivity {
         pokemon4_Image = findViewById(R.id.imageView_party4);
         ///Species Name
         pokemon4_EditText = findViewById(R.id.textView_party4);
-        pokemon4_EditText.setAdapter(speciesAdapter);
+        pokemon4_EditText.setAdapter(PokemonAdapter);
         ///Move Group
         pokemon4_MoveLayout = findViewById(R.id.linearLayout_Moveset4);
+        //Ability
+        pokemon4_Ability = findViewById(R.id.textView_Ability4);
         ///Move 1
         pokemon4_Move1 = findViewById(R.id.textView_Move4_1);
         ///Move 2
@@ -310,9 +346,11 @@ public class MainActivity extends AppCompatActivity {
         pokemon5_Image = findViewById(R.id.imageView_party5);
         ///Species Name
         pokemon5_EditText = findViewById(R.id.textView_party5);
-        pokemon5_EditText.setAdapter(speciesAdapter);
+        pokemon5_EditText.setAdapter(PokemonAdapter);
         ///Move Group
         pokemon5_MoveLayout = findViewById(R.id.linearLayout_Moveset5);
+        //Ability
+        pokemon5_Ability = findViewById(R.id.textView_Ability5);
         ///Move 1
         pokemon5_Move1 = findViewById(R.id.textView_Move5_1);
         ///Move 2
@@ -340,9 +378,11 @@ public class MainActivity extends AppCompatActivity {
         pokemon6_Image = findViewById(R.id.imageView_party6);
         ///Species Name
         pokemon6_EditText = findViewById(R.id.textView_party6);
-        pokemon6_EditText.setAdapter(speciesAdapter);
+        pokemon6_EditText.setAdapter(PokemonAdapter);
         ///Move Group
         pokemon6_MoveLayout = findViewById(R.id.linearLayout_Moveset6);
+        //Ability
+        pokemon6_Ability = findViewById(R.id.textView_Ability6);
         ///Move 1
         pokemon6_Move1 = findViewById(R.id.textView_Move6_1);
         ///Move 2
@@ -355,5 +395,36 @@ public class MainActivity extends AppCompatActivity {
         //</editor-fold>
     }
 
-
+    public void updatePokemon1() {
+        //Get Species Name
+        String speciesName = pokemon1_EditText.getText().toString();
+        Integer speciesNo = PokemonList.get(speciesName);
+        String generationCalc = edit_Generation.getText().toString();
+        //Update Abilities
+        Cursor abilityResults = allData.rawQuery("SELECT Name FROM Abilities" +
+                        " WHERE ID IN (SELECT AbilityID FROM (SELECT AbilityID, Slot, MAX(Generation) FROM Pkmn_Abilities"+
+                        " WHERE SpeciesID=? AND Generation<=? GROUP BY SpeciesID, Slot ORDER BY Slot ASC))",
+                new String[] {speciesNo.toString(), generationCalc});
+        int length = abilityResults.getCount();
+        String[] availableAbilities = new String[length];
+        if (abilityResults.moveToFirst()) {
+            for (int i = 0; i < length; i++) {
+                availableAbilities[i] = abilityResults.getString(0);
+                abilityResults.moveToNext();
+            }
+        }
+        //Update Moves
+        Cursor moveResults = allData.rawQuery("SELECT Move FROM Moves "+
+                        "WHERE ID IN (SELECT Move FROM Pkmn_Learnsets" +
+                            "WHERE Generation=? AND Species=?))",
+                new String[] {generationCalc, speciesNo.toString()});
+        length = moveResults.getCount();
+        String[] availableMoves = new String[length];
+        if (moveResults.moveToFirst()) {
+            for (int i = 0; i < length; i++) {
+                availableMoves[i] = moveResults.getString(0);
+                moveResults.moveToNext();
+            }
+        }
+    }
 }
